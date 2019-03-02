@@ -1,0 +1,53 @@
+.Form {
+    background: #FFFFFF;
+    box-shadow: 0 10px 24px 0 #B3B3B3;
+    border-radius: 4px;
+    height: 500px;
+    width: 500px;
+    border: 36px solid white;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.green {
+    color: green;
+}
+
+.appear {
+    animation: appear .2s ease-in;
+}
+
+.Form .Input:last-of-type {
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-family: Circe-Bold;
+    font-size: 24px;
+    color: #0A61C4;
+    letter-spacing: 0.6px;
+    margin-bottom: 24px;
+    /* margin-top: 70px; */
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h6 {
+    font-family: Circe-Regular;
+    font-size: 18px;
+    color: #0A61C4;
+    letter-spacing: 0.4px;
+    display: block;
+    text-align: left;
+    font-weight: 300;
+    margin: 0 auto;
+    width: 280px;
+}

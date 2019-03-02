@@ -1,0 +1,19 @@
+.ImageGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 65%;
+    grid-gap: 16px;
+    margin: 0 auto 24px auto;
+}
+
+.ImageGrid img {
+    width: 100%;
+    opacity: 0.6;
+    transform: scale(0.8, 0.8);
+    transition: transform .3s, opacity .3s;
+}
+
+img.selected {
+    opacity: 1;
+    transform: scale(1, 1);
+}

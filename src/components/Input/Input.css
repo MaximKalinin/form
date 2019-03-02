@@ -1,0 +1,36 @@
+.Input label {
+    font-family: Circe-Regular;
+    font-size: 18px;
+    color: #0A61C4;
+    letter-spacing: 0.4px;
+    display: block;
+    text-align: left;
+}
+
+.Input input, .Input select {
+    background: #F1F1F1;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #F1F1F1;
+    padding: 13px 26px;
+    font-size: 18px;
+    color: #AEAEAE;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 1s;
+}
+.Input {
+    width: 280px;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+}
+
+input.incorrect {
+    border: 1px solid red;
+}
+
+.hint {
+    color: #AEAEAE;
+    text-align: left;
+}

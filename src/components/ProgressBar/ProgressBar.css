@@ -1,0 +1,7 @@
+.ProgressBar {
+    position: absolute;
+    top: 0;
+    height: 3px;
+    background: #0A61C4;
+    transition: width 1s;
+}
