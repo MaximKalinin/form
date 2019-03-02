@@ -12,12 +12,12 @@ import ImageGrid from '../../components/ImageGrid/ImageGrid';
 import Spinner from '../../components/Spinner/Spinner';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import './Form.css';
-
+//This form has 4 "screens" - first one is auth screen (signin or signup), second lets user to write personal information, third collects information about user's interests and the last one shows all the information.
 class Form extends Component {
     state = {
-        stage: 0,
-        valid: false,
-        animateForm: false,
+        stage: 0, //this is the number of screen
+        valid: false, //all the inputs are valid?
+        animateForm: false, //helps to fade in the form
         loading: false,
         token: null,
         userId: null,
@@ -140,7 +140,7 @@ class Form extends Component {
             });
         }
     }
-
+    //checks input data 
     inputHandler = (event, label) => {
         const fields = [...this.state.fields];
         const field = fields.find(field => (field.label === label));
@@ -168,7 +168,7 @@ class Form extends Component {
         })
         this.setState({images: images, valid: valid});
     }
-
+    //validates value by rules
     isValid = (value, rules) => {
         let valid = true;
         if (rules.required) {
@@ -184,11 +184,10 @@ class Form extends Component {
         }
         return valid;
     }
-
+    //go to next screen
     nextStage = (diff) => {
         if (this.state.valid) {
             const stage = this.state.stage + diff;
-            // console.log(stage);
             this.setState({stage: stage, animateForm: true, valid: false});
             setTimeout(() => {
                 this.setState({animateForm: false});
@@ -196,7 +195,7 @@ class Form extends Component {
             if (stage === 3) this.fetchData();
         }
     }
-
+    //loads data from server
     fetchData = () => {
         this.setState({loading: true});
         const queryParams = '?auth=' + this.state.token + '&orderBy="userId"&equalTo="' + this.state.userId + '"';
@@ -219,7 +218,7 @@ class Form extends Component {
         })
         .catch(err => this.setState({loading: false, error: true}));
     }
-
+    //sends data to a server
     sendData = () => {
         if (this.state.valid) {
             this.setState({loading: true});
@@ -240,16 +239,6 @@ class Form extends Component {
             });
         }
     }
-
-    // skipStages = () => {
-    //     const stage = 3;
-    //     // console.log(stage);
-    //     this.setState({stage: stage, animateForm: true, valid: false});
-    //     setTimeout(() => {
-    //         this.setState({animateForm: false});
-    //     }, 1000);
-    //     this.fetchData();
-    // }
 
     render() {
         const formClasses = ['Form'];
